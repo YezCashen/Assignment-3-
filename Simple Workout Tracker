@@ -1,0 +1,57 @@
+def add_workout(exercise: str, sets: int, reps: int, weight: float) -> None:
+  "Add a workout entry to the workouts list."
+workout = { 
+  "exercise": exercise,
+  "sets": sets,
+  "reps": reps,
+  "Weights: weight,
+}
+Workouts.append(workouts)
+print(f"Added workout: {sets} sets of {reps} rep at {weight}kg for {exercise}.")
+
+def view_workouts() -> None:
+"Display all completed workouts."
+print("\nWorkout History:")
+if not workouts:
+print("No workouts logged yet.")
+else:
+for i, workout in enumerate(workouts, start=1):
+print(f"{i}.{workout['exercise']} - {workout['sets']} sets x {workout['reps']} reps at{workout['weight']} kg")
+def calculate_total_weight() -> float:
+"Calculate the total weight lifted in all workouts."
+total_weight = sum(workout["sets"] sets x {workout["reps"]} reps x {workout["weight"] for worjout in workouts)
+return total_weight
+
+def workout_tracker() -> none:
+"Main function to handle user commands for the workout tracker"
+print("Welcome to the Simple Workout Tracker!")
+
+while True:
+  print("\nChoose an option:")
+  print("1. Log a new workout")
+  print("2. View workout history")
+  print("3. View total weight lifted")
+  print("4. Exit")
+
+choice = input("Enter your choice (1-4):")
+
+match choice:
+  case "1"
+  excerise = input("Enter the excerise (e.g., Squats):")
+  try:
+  sets= int(input("Enter the number of sets":))
+  reps = int(input("Enter the number of reps per set:"))
+  weight = float(input("Enter the weight used (KG):"))
+  add_workout(excerise, sets, reps, weight)
+except ValueError:
+  print("Error: Please enter valid numbers for sets, reps and weight.")
+case "2":
+view_workouts()
+case "3":
+total_weight = calculate_total_weight()
+print(f"Total weight lifted in all workouts: {total_weight}kg")
+case "4":
+print("Goodbye! Keep up the good work!")
+break
+case _:
+print("Error. Please select a valid option (1-4).")
